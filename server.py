@@ -15,12 +15,11 @@ class EchoServerHandler(object):
         self.log = logger
 
     def ping(self):
-        self.log.info("pong!")
+        self.log.info('pong!')
 
     def echo(self, echomessage):
-        response = ttypes.EchoResponse
-        response.response = echomessage.message
-        self.log.info("Received %s" % echomessage)
+        response = ttypes.EchoResponse(echomessage.message)
+        self.log.info('Received %s : returning %s' % (echomessage, response))
         return response
 
 if __name__ == '__main__':
@@ -33,6 +32,6 @@ if __name__ == '__main__':
     server = TServer.TSimpleServer(
         processor, transport, tfactory, pfactory)
 
-    logger.warn("Starting server...")
+    logger.warn('Starting server...')
     server.serve()
-    logger.warn("Done!") 
+    logger.warn('Done!') 
