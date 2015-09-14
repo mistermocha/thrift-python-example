@@ -1,0 +1,9 @@
+* Intersperse code samples in slides
+* Introduce the idea of client/server sooner
+* Simplify the webserver/cache/db model
+* Build idea out from...
+  * outgrow server
+  * outgrow teams
+  * etc...
+* Get rid of whitespace
+  * less words, bigger fonts

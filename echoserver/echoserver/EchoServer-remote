@@ -23,6 +23,7 @@ if len(sys.argv) <= 1 or sys.argv[1] == '--help':
   print 'Functions:'
   print '  void ping()'
   print '  EchoResponse echo(EchoMessage message)'
+  print '  NumberSum add(NumbersToAdd numbers)'
   print ''
   sys.exit(0)
 
@@ -84,6 +85,12 @@ elif cmd == 'echo':
     print 'echo requires 1 args'
     sys.exit(1)
   pp.pprint(client.echo(eval(args[0]),))
+
+elif cmd == 'add':
+  if len(args) != 1:
+    print 'add requires 1 args'
+    sys.exit(1)
+  pp.pprint(client.add(eval(args[0]),))
 
 else:
   print 'Unrecognized method %s' % cmd

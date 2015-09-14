@@ -8,6 +8,15 @@ struct EchoResponse {
   1: string response
 }
 
+struct NumbersToAdd {
+  1: i64 firstNumber,
+  2: i64 secondNumber
+}
+
+struct NumberSum {
+  1: i64 sum
+}
+
 service EchoServer {
   /* 
    * ping()
@@ -22,4 +31,11 @@ service EchoServer {
    * Returns an EchoResponse
    */
   EchoResponse echo(1: EchoMessage message)
+
+  /*
+   * add(NumbersTooAdd numbers)
+   *
+   * Returns an EchoResponse
+   */
+  NumberSum add(1: NumbersToAdd numbers)
 }

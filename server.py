@@ -22,6 +22,12 @@ class EchoServerHandler(object):
         self.log.info('Received %s : returning %s' % (echomessage, response))
         return response
 
+    def add(self, numbers):
+        _sum = numbers.firstNumber + numbers.secondNumber
+        response = ttypes.NumberSum(_sum)
+        self.log.info('Received %s : returning %s' % (numbers, response))
+        return response
+
 if __name__ == '__main__':
     handler = EchoServerHandler()
     processor = EchoServer.Processor(handler)
@@ -34,4 +40,4 @@ if __name__ == '__main__':
 
     logger.warn('Starting server...')
     server.serve()
-    logger.warn('Done!') 
+    logger.warn('Done!')
